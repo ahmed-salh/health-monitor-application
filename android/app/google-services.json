@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "382584634206",
+    "firebase_url": "https://healthmonitorsystem-cf28f-default-rtdb.firebaseio.com",
+    "project_id": "healthmonitorsystem-cf28f",
+    "storage_bucket": "healthmonitorsystem-cf28f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:382584634206:android:ae839086ec11ff4ed1edcf",
+        "android_client_info": {
+          "package_name": "com.example.health_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "382584634206-fkpvdfba2gkpncodk8ijak9ho6l82kfd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoSN7Rd34097gLOTlFzziOX_-ULNxp4T0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "382584634206-fkpvdfba2gkpncodk8ijak9ho6l82kfd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:382584634206:android:d0702b97aca72acdd1edcf",
+        "android_client_info": {
+          "package_name": "com.nihalhesham.health_monitor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "382584634206-8saena0dm2k9i680dtpo9f84br0169sf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nihalhesham.health_monitor",
+            "certificate_hash": "ac7f190239c1e24194af35ab3b3a1a8924874e17"
+          }
+        },
+        {
+          "client_id": "382584634206-fkpvdfba2gkpncodk8ijak9ho6l82kfd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoSN7Rd34097gLOTlFzziOX_-ULNxp4T0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "382584634206-fkpvdfba2gkpncodk8ijak9ho6l82kfd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
