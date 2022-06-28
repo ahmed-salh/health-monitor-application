@@ -81,7 +81,7 @@ class _MyMonitorState extends State<MyMonitor> {
                 progressColor: Colors.blue[700],
                 backgroundColor: Colors.blue.shade200,
                 circularStrokeCap: CircularStrokeCap.round,
-                center: Text('$displaytext1',
+                center: Text(displaytext1,
                     style:
                         TextStyle(fontSize: 25, fontStyle: FontStyle.italic)),
               ),
