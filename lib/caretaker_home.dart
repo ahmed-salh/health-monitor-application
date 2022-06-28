@@ -1,4 +1,5 @@
 //import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:grad_app/user_page.dart';
 import 'package:grad_app/users.dart';
@@ -37,8 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
           //title: Text('${widget.title}'),
           title: Text('Health Monitor'),
         ),
-        body:
-            /*StreamBuilder<User>(
+        body: StreamBuilder<User?>(
             stream: FirebaseAuth.instance.authStateChanges(),
             builder: (context, snapshot) {
               if (snapshot.hasData) {}
@@ -48,108 +48,124 @@ class _MyHomePageState extends State<MyHomePage> {
               //return SignUp();
               return Container(
                 child: Center(
-                  child: GestureDetector (
-                    onTap: () async {
-                      final newUser = await _googleSignIn.signIn();
-                      final googleAuth = await newUser.authentication;
-                      final creds = GoogleAuthProvider.credential(
-                        accessToken: googleAuth.accessToken,
-                        idToken: googleAuth.idToken
-                      );
-                      await FirebaseAuth.instance.signInWithCredential(creds);
-                    },
-                    child: Container()
-                  )
-                ),
-              );
-            }),*/
-            Container(
-          padding: EdgeInsets.all(15.0),
-          child: GridView.count(
-            crossAxisCount: 2,
-            children: <Widget>[
-              Card(
-                elevation: 9,
-                margin: EdgeInsets.all(8.0),
-                child: InkWell(
-                    onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => MyMonitor()));
-                    },
-                    splashColor: Colors.red,
-                    child: Center(
-                        child: Column(
-                            mainAxisSize: MainAxisSize.min,
+                    child: GestureDetector(
+                        onTap: () async {
+                          final newUser = await _googleSignIn.signIn();
+                          final googleAuth = await newUser?.authentication;
+                          final creds = GoogleAuthProvider.credential(
+                              accessToken: googleAuth?.accessToken,
+                              idToken: googleAuth?.idToken);
+                          await FirebaseAuth.instance
+                              .signInWithCredential(creds);
+                        },
+                        child: Container(
+                          padding: EdgeInsets.all(15.0),
+                          child: GridView.count(
+                            crossAxisCount: 2,
                             children: <Widget>[
-                          Icon(Icons.favorite_sharp,
-                              size: 70.0, color: Colors.red),
-                          Text('Monitor', style: new TextStyle(fontSize: 26.0)),
-                        ]))),
-              ),
-              Card(
-                elevation: 9,
-                margin: EdgeInsets.all(8.0),
-                child: InkWell(
-                    onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => MapScreen()));
-                    },
-                    splashColor: Colors.green,
-                    child: Center(
-                        child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: <Widget>[
-                          Icon(Icons.update, size: 70.0, color: Colors.green),
-                          Text('Live Tracker',
-                              style: new TextStyle(fontSize: 26.0)),
-                        ]))),
-              ),
-              Card(
-                elevation: 9,
-                margin: EdgeInsets.all(8.0),
-                child: InkWell(
-                    onTap: () {
-                      /*  Navigator.push(
+                              Card(
+                                elevation: 9,
+                                margin: EdgeInsets.all(8.0),
+                                child: InkWell(
+                                    onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  MyMonitor()));
+                                    },
+                                    splashColor: Colors.red,
+                                    child: Center(
+                                        child: Column(
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: <Widget>[
+                                          Icon(Icons.favorite_sharp,
+                                              size: 70.0, color: Colors.red),
+                                          Text('Monitor',
+                                              style: new TextStyle(
+                                                  fontSize: 26.0)),
+                                        ]))),
+                              ),
+                              Card(
+                                elevation: 9,
+                                margin: EdgeInsets.all(8.0),
+                                child: InkWell(
+                                    onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  MapScreen()));
+                                    },
+                                    splashColor: Colors.green,
+                                    child: Center(
+                                        child: Column(
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: <Widget>[
+                                          Icon(Icons.update,
+                                              size: 70.0, color: Colors.green),
+                                          Text('Live Tracker',
+                                              style: new TextStyle(
+                                                  fontSize: 26.0)),
+                                        ]))),
+                              ),
+                              Card(
+                                elevation: 9,
+                                margin: EdgeInsets.all(8.0),
+                                child: InkWell(
+                                    onTap: () {
+                                      /*  Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) =>
                                   UserPage(urlImage: urlImage, name: name)));
                   */
-                    },
-                    splashColor: Colors.blue,
-                    child: Center(
-                        child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: <Widget>[
-                          Icon(Icons.people_alt_outlined,
-                              size: 70.0, color: Colors.blueGrey),
-                          Text('Users', style: TextStyle(fontSize: 26.0)),
-                        ]))),
-              ),
-              Card(
-                elevation: 9,
-                margin: EdgeInsets.all(8.0),
-                child: InkWell(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => CallAmbulance()));
-                    },
-                    splashColor: Colors.red,
-                    child: Center(
-                        child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: <Widget>[
-                          Icon(Icons.call_outlined,
-                              size: 70.0, color: Colors.red),
-                          Text('Call Ambulance',
-                              style: new TextStyle(fontSize: 20.0)),
-                        ]))),
-              ),
-            ],
-          ),
-        ),
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  LoginPage()));
+                                    },
+                                    splashColor: Colors.blue,
+                                    child: Center(
+                                        child: Column(
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: <Widget>[
+                                          Icon(Icons.people_alt_outlined,
+                                              size: 70.0,
+                                              color: Colors.blueGrey),
+                                          Text('Users',
+                                              style: TextStyle(fontSize: 26.0)),
+                                        ]))),
+                              ),
+                              Card(
+                                elevation: 9,
+                                margin: EdgeInsets.all(8.0),
+                                child: InkWell(
+                                    onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  CallAmbulance()));
+                                    },
+                                    splashColor: Colors.red,
+                                    child: Center(
+                                        child: Column(
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: <Widget>[
+                                          Icon(Icons.call_outlined,
+                                              size: 70.0, color: Colors.red),
+                                          Text('Call Ambulance',
+                                              style: new TextStyle(
+                                                  fontSize: 20.0)),
+                                        ]))),
+                              ),
+                            ],
+                          ),
+                        ))),
+              );
+            }),
         floatingActionButton: SpeedDial(
             closeManually: false,
             overlayColor: Colors.white10,

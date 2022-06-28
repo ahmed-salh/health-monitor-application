@@ -36,7 +36,7 @@ class _MyPatientPageState extends State<MyPatientPage> {
           title: Text('Health Monitor'),
         ),
         body:
-        /*StreamBuilder<User>(
+            /*StreamBuilder<User>(
             stream: FirebaseAuth.instance.authStateChanges(),
             builder: (context, snapshot) {
               if (snapshot.hasData) {}
@@ -61,7 +61,7 @@ class _MyPatientPageState extends State<MyPatientPage> {
                 ),
               );
             }),*/
-        Container(
+            Container(
           padding: EdgeInsets.all(15.0),
           child: GridView.count(
             crossAxisCount: 2,
@@ -79,10 +79,10 @@ class _MyPatientPageState extends State<MyPatientPage> {
                         child: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: <Widget>[
-                              Icon(Icons.favorite_sharp,
-                                  size: 70.0, color: Colors.red),
-                              Text('Monitor', style: new TextStyle(fontSize: 26.0)),
-                            ]))),
+                          Icon(Icons.favorite_sharp,
+                              size: 70.0, color: Colors.red),
+                          Text('Monitor', style: new TextStyle(fontSize: 26.0)),
+                        ]))),
               ),
               Card(
                 elevation: 9,
@@ -96,16 +96,18 @@ class _MyPatientPageState extends State<MyPatientPage> {
                                     urlImage: urlImage,
                                     name: name,
                                   )));*/
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => LoginPage()));
                     },
                     splashColor: Colors.blue,
                     child: Center(
                         child: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: <Widget>[
-                              Icon(Icons.people_alt_outlined,
-                                  size: 70.0, color: Colors.blueGrey),
-                              Text('Users', style: TextStyle(fontSize: 26.0)),
-                            ]))),
+                          Icon(Icons.people_alt_outlined,
+                              size: 70.0, color: Colors.blueGrey),
+                          Text('Users', style: TextStyle(fontSize: 26.0)),
+                        ]))),
               ),
               Card(
                 elevation: 9,
@@ -122,11 +124,11 @@ class _MyPatientPageState extends State<MyPatientPage> {
                         child: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: <Widget>[
-                              Icon(Icons.call_outlined,
-                                  size: 70.0, color: Colors.red),
-                              Text('Call Ambulance',
-                                  style: new TextStyle(fontSize: 20.0)),
-                            ]))),
+                          Icon(Icons.call_outlined,
+                              size: 70.0, color: Colors.red),
+                          Text('Call Ambulance',
+                              style: new TextStyle(fontSize: 20.0)),
+                        ]))),
               ),
             ],
           ),

@@ -122,6 +122,10 @@ class NavigationDrawerWidget extends StatelessWidget {
           ),
         ));
         break;*/
+      case 1:
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => LoginPage()));
+        break;
       case 2:
         Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => MapScreen(),
