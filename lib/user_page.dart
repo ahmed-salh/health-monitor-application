@@ -15,7 +15,13 @@ class UserPage extends StatelessWidget {
   Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFF006064),
-        title: Text(name),
+        title: Text("Health Tracker"),
+        leading: Container(
+          child: CircleAvatar(
+            backgroundImage: AssetImage('images/applicationicon.jpg'),
+            radius: 150,
+          ),
+        ),
         centerTitle: true,
       ),
       body: Image.network(

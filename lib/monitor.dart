@@ -49,17 +49,15 @@ class _MyMonitorState extends State<MyMonitor> {
     return Scaffold(
       drawer: NavigationDrawerWidget(),
       appBar: AppBar(
-          //backgroundColor: Colors.cyan,
-          title: Center(
-        child: Text(
-          'Health Monitor',
+        //backgroundColor: Colors.cyan,
+        title: Text(
+          'Health Tracker',
           style: TextStyle(
               //fontStyle: FontStyle.italic,
               fontWeight: FontWeight.bold,
-              fontSize: 40,
               color: Colors.white),
         ),
-      )),
+      ),
       backgroundColor: Colors.white,
       body: Center(
         child: Padding(

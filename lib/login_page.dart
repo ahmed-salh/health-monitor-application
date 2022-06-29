@@ -20,8 +20,19 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       backgroundColor: Color(0xFF006064),
       appBar: AppBar(
-        title: Text('Health Monitor System'),
+        title: Text('Health Tracker'),
         backgroundColor: Color(0xFF006064),
+        elevation: 20,
+        leading: Container(
+          padding: EdgeInsets.all(5),
+          child: /* Image.asset(
+              "images/applicationicon.jpg",
+            ),*/
+              CircleAvatar(
+            backgroundImage: AssetImage('images/iconapp.jpeg'),
+            radius: 150,
+          ),
+        ),
       ),
       body: loginUI(),
     );
@@ -128,9 +139,17 @@ class _LoginPageState extends State<LoginPage> {
           children: [
             Spacer(),
             CircleAvatar(
-              backgroundImage: AssetImage('images/appicon.jfif'),
-              radius: 100,
+              backgroundImage: AssetImage('images/iconapp.jpeg'),
+              radius: 150,
             ),
+            /*Column(
+              children: [
+                Image.asset(
+                  'images/applicationicon.jpg',
+                ),
+              ],
+            ),*/
+
             Spacer(),
             Align(
               alignment: Alignment.centerLeft,

@@ -39,13 +39,13 @@ class MyApp extends StatelessWidget {
             ),
           ),
           debugShowCheckedModeBanner: false,
-          title: 'Health Monitor System',
+          title: 'Health Tracker System',
           /*theme: ThemeData(
         primarySwatch: Colors.blueGrey,
       ),*/
           home: LoginPage(
-            //title: 'Health Monitor',
-          ),
+              //title: 'Health Monitor',
+              ),
         ));
   }
 }

@@ -33,7 +33,8 @@ class _MyPatientPageState extends State<MyPatientPage> {
         drawer: NavigationDrawerWidget(),
         appBar: AppBar(
           //title: Text('${widget.title}'),
-          title: Text('Health Monitor'),
+          title: Text('Health Tracker'),
+          elevation: 20,
         ),
         body:
             /*StreamBuilder<User>(

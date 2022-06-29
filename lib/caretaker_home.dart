@@ -36,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
         drawer: NavigationDrawerWidget(),
         appBar: AppBar(
           //title: Text('${widget.title}'),
-          title: Text('Health Monitor'),
+          title: Text('Health Tracker'),
         ),
         body: StreamBuilder<User?>(
             stream: FirebaseAuth.instance.authStateChanges(),

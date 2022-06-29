@@ -5,7 +5,7 @@ import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 
 class CallAmbulance extends StatelessWidget {
   Widget ambulanceButton() {
-    final number = '123';
+    final number1 = '123';
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
           primary: Color(0xFF006064),
@@ -13,7 +13,7 @@ class CallAmbulance extends StatelessWidget {
           textStyle: TextStyle(fontSize: 24),
         ),
         onPressed: () async {
-          await FlutterPhoneDirectCaller.callNumber(number);
+          await FlutterPhoneDirectCaller.callNumber(number1);
         },
         child: Text('Call Ambulance'));
   }
