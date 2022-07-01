@@ -6,6 +6,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'caretaker_home.dart';
 import 'google_login_controller.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -20,7 +21,8 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       backgroundColor: Color(0xFF006064),
       appBar: AppBar(
-        title: Text('Health Tracker'),
+        title: Text('Health Tracker',
+            style: TextStyle(fontFamily: 'BebasNeue', fontSize: 30)),
         backgroundColor: Color(0xFF006064),
         elevation: 20,
         leading: Container(
@@ -157,7 +159,8 @@ class _LoginPageState extends State<LoginPage> {
                 'Hey there,\n Welcome Back!',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 24,
+                  fontSize: 28,
+                  fontFamily: "PatuaOne",
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -168,7 +171,9 @@ class _LoginPageState extends State<LoginPage> {
               child: Text(
                 'Sign Up with your Google account',
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 19,
+                  fontFamily: "Montserrat Regular",
+                  fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
               ),
@@ -182,7 +187,10 @@ class _LoginPageState extends State<LoginPage> {
                 minimumSize: Size(double.infinity, 50),
               ),
               icon: FaIcon(FontAwesomeIcons.google),
-              label: Text('Sign Up with Google'),
+              label: Text('Sign Up with Google',
+                  style: TextStyle(
+                      fontFamily: 'Montserrat Medium',
+                      fontWeight: FontWeight.bold)),
               onPressed: () {
                 Provider.of<GoogleSignInController>(context, listen: false)
                     .login();
@@ -206,23 +214,31 @@ class _LoginPageState extends State<LoginPage> {
           Text('Welcome ${model.googleAccount!.displayName ?? ''}',
               style: TextStyle(
                   color: Colors.white,
-                  fontSize: 25,
-                  fontStyle: FontStyle.italic,
+                  fontSize: 30,
+                  fontFamily: "PatuaOne",
                   fontWeight: FontWeight.bold)),
           Text(model.googleAccount!.email,
               style: TextStyle(
                   color: Colors.white,
-                  fontSize: 15,
+                  fontSize: 12,
+                  fontFamily: 'Montserrat Regular',
                   fontStyle: FontStyle.italic,
                   fontWeight: FontWeight.bold)),
           SizedBox(height: 40),
           Text(
-            'To continue to the Home Page, please pick your status: \n',
+            'To continue to the Home Page, \n please pick your status: \n',
             style: TextStyle(
-                color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold),
+              fontFamily: "PatuaOne",
+              color: Colors.white,
+              fontSize: 20,
+            ),
           ),
           ElevatedButton.icon(
-            icon: Text('Caretaker', style: TextStyle(color: Color(0xFF006064))),
+            icon: Text('Caretaker',
+                style: TextStyle(
+                    fontFamily: "PatuaOne",
+                    color: Color(0xFF006064),
+                    fontSize: 29)),
             label:
                 Icon(Icons.family_restroom_outlined, color: Color(0xFF006064)),
             style: ElevatedButton.styleFrom(
@@ -242,7 +258,11 @@ class _LoginPageState extends State<LoginPage> {
           SizedBox(height: 10),
           //child: const Text('Caretaker?')),
           ElevatedButton.icon(
-            icon: Text('Patient', style: TextStyle(color: Color(0xFF006064))),
+            icon: Text('Patient',
+                style: TextStyle(
+                    fontFamily: "PatuaOne",
+                    color: Color(0xFF006064),
+                    fontSize: 30)),
             label: Icon(Icons.sick_outlined, color: Color(0xFF006064)),
             style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.symmetric(horizontal: 62, vertical: 10),
@@ -258,13 +278,16 @@ class _LoginPageState extends State<LoginPage> {
               );
             },
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 28),
           ActionChip(
             padding: EdgeInsets.all(10),
             backgroundColor: Colors.white,
             avatar: Icon(Icons.logout, color: Color(0xFF006064)),
             label: Text("Log Out",
-                style: TextStyle(color: Color(0xFF006064), fontSize: 20)),
+                style: TextStyle(
+                    color: Color(0xFF006064),
+                    fontSize: 20,
+                    fontFamily: 'BebasNeue')),
             onPressed: () {
               Provider.of<GoogleSignInController>(context, listen: false)
                   .logOut();

@@ -34,7 +34,8 @@ class _MapScreenState extends State<MapScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
-        title: const Text('Google Maps'),
+        title: const Text('Google Maps',
+            style: TextStyle(fontFamily: 'BebasNeue', fontSize: 30)),
         actions: [
           if (_origin != null)
             TextButton(

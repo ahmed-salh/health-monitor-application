@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'caretaker_home.dart';
 import 'login_page.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class UserPage extends StatelessWidget {
   final String name;
@@ -15,7 +16,8 @@ class UserPage extends StatelessWidget {
   Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFF006064),
-        title: Text("Health Tracker"),
+        title: Text("Health Tracker",
+            style: TextStyle(fontFamily: 'BebasNeue', fontSize: 30)),
         leading: Container(
           child: CircleAvatar(
             backgroundImage: AssetImage('images/applicationicon.jpg'),
