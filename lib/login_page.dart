@@ -6,7 +6,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'caretaker_home.dart';
 import 'google_login_controller.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -27,10 +26,7 @@ class _LoginPageState extends State<LoginPage> {
         elevation: 20,
         leading: Container(
           padding: EdgeInsets.all(5),
-          child: /* Image.asset(
-              "images/applicationicon.jpg",
-            ),*/
-              CircleAvatar(
+          child: CircleAvatar(
             backgroundImage: AssetImage('images/iconapp.jpeg'),
             radius: 150,
           ),
@@ -52,87 +48,6 @@ class _LoginPageState extends State<LoginPage> {
     });
   }
 
-  /*loggedInUI(GoogleSignInController model) {
-    return Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          CircleAvatar(
-            backgroundImage:
-                Image.network(model.googleAccount!.photoUrl ?? '').image,
-            radius: 70,
-          ),
-          SizedBox(height: 8),
-          Text('Welcome ${model.googleAccount!.displayName ?? ''}',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 25,
-                  fontStyle: FontStyle.italic,
-                  fontWeight: FontWeight.bold)),
-          Text(model.googleAccount!.email,
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 15,
-                  fontStyle: FontStyle.italic,
-                  fontWeight: FontWeight.bold)),
-          SizedBox(height: 40),
-          Text(
-            'To continue to the Home Page, please pick your status: \n',
-            style: TextStyle(
-                color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold),
-          ),
-          ElevatedButton.icon(
-            icon: Text('Caretaker', style: TextStyle(color: Color(0xFF006064))),
-            label:
-                Icon(Icons.family_restroom_outlined, color: Color(0xFF006064)),
-            style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
-                primary: Colors.white,
-                textStyle: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700,
-                )),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => MyHomePage()),
-              );
-            },
-          ),
-          SizedBox(height: 10),
-          //child: const Text('Caretaker?')),
-          ElevatedButton.icon(
-            icon: Text('Patient', style: TextStyle(color: Color(0xFF006064))),
-            label: Icon(Icons.sick_outlined, color: Color(0xFF006064)),
-            style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(horizontal: 62, vertical: 10),
-                primary: Colors.white,
-                textStyle: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700,
-                )),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => MyPatientPage()),
-              );
-            },
-          ),
-          SizedBox(height: 20),
-          ActionChip(
-            padding: EdgeInsets.all(10),
-            backgroundColor: Colors.white,
-            avatar: Icon(Icons.logout, color: Color(0xFF006064)),
-            label: Text("Log Out",
-                style: TextStyle(color: Color(0xFF006064), fontSize: 20)),
-            onPressed: () {
-              Provider.of<GoogleSignInController>(context, listen: false)
-                  .logOut();
-            },
-          )
-        ]);
-  }
-*/
   loginControls(BuildContext context) {
     return Padding(
         padding: EdgeInsets.all(35),
@@ -144,14 +59,6 @@ class _LoginPageState extends State<LoginPage> {
               backgroundImage: AssetImage('images/iconapp.jpeg'),
               radius: 150,
             ),
-            /*Column(
-              children: [
-                Image.asset(
-                  'images/applicationicon.jpg',
-                ),
-              ],
-            ),*/
-
             Spacer(),
             Align(
               alignment: Alignment.centerLeft,
@@ -169,7 +76,7 @@ class _LoginPageState extends State<LoginPage> {
             Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                'Sign Up with your Google account',
+                'Sign in with your Google account',
                 style: TextStyle(
                   fontSize: 19,
                   fontFamily: "Montserrat Regular",
@@ -179,7 +86,6 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             SizedBox(height: 15),
-            //Image.asset()
             ElevatedButton.icon(
               style: ElevatedButton.styleFrom(
                 primary: Colors.white,
@@ -187,7 +93,7 @@ class _LoginPageState extends State<LoginPage> {
                 minimumSize: Size(double.infinity, 50),
               ),
               icon: FaIcon(FontAwesomeIcons.google),
-              label: Text('Sign Up with Google',
+              label: Text('Sign in with Google',
                   style: TextStyle(
                       fontFamily: 'Montserrat Medium',
                       fontWeight: FontWeight.bold)),
@@ -256,7 +162,6 @@ class _LoginPageState extends State<LoginPage> {
             },
           ),
           SizedBox(height: 10),
-          //child: const Text('Caretaker?')),
           ElevatedButton.icon(
             icon: Text('Patient',
                 style: TextStyle(

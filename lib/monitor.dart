@@ -19,7 +19,6 @@ class _MyMonitorState extends State<MyMonitor> {
   String displaytext1 = 'spo2 ';
   String displaytext2 = 'heartrate';
   late int x;
-
   final database = FirebaseDatabase.instance.reference();
 
   @override
@@ -31,7 +30,6 @@ class _MyMonitorState extends State<MyMonitor> {
   void activateListeners() {
     database.child('SPO2').onValue.listen((event) {
       final Object? oxygen = event.snapshot.value;
-      //final x=oxygen;
       setState(() {
         displaytext1 = 'SpO2\n $oxygen % ';
       });
@@ -50,7 +48,6 @@ class _MyMonitorState extends State<MyMonitor> {
       backgroundColor: Color(0xffeceff1),
       drawer: NavigationDrawerWidget(),
       appBar: AppBar(
-        //backgroundColor: Colors.cyan,
         title: Text(
           'Health Tracker',
           style: TextStyle(fontFamily: 'BebasNeue', fontSize: 30),
@@ -65,14 +62,14 @@ class _MyMonitorState extends State<MyMonitor> {
                   child: ClipPath(
                       clipper: WaveClipper(),
                       child: Container(
-                        color: Color(0xff006064),
+                        color: Colors.white,
                         height: 200,
                       ))),
             ),
             ClipPath(
                 clipper: WaveClipper(),
                 child: Container(
-                  color: Color(0xffeeeeee),
+                  color: Color(0xff006064),
                   height: 180,
                 )),
             Row(
@@ -86,7 +83,7 @@ class _MyMonitorState extends State<MyMonitor> {
                   style: TextStyle(
                       fontFamily: 'Montserrat Medium',
                       fontSize: 25,
-                      color: Color(0xff006064),
+                      color: Colors.white,
                       fontWeight: FontWeight.bold),
                 ),
               ],
@@ -97,23 +94,20 @@ class _MyMonitorState extends State<MyMonitor> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    /*TweenAnimationBuilder(
-                    tween: Tween (begin: 0.0, end : 1.0),
-                    duration: Duration(seconds: 3),
-                    builder: (context,value,)
-                )*/
                     CircularPercentIndicator(
                       animation: true,
                       animationDuration: 3000,
                       radius: 100,
                       lineWidth: 20,
-                      percent: 0.95,
+                      percent: 1.0,
                       progressColor: Colors.blue[700],
                       backgroundColor: Colors.blue.shade200,
                       circularStrokeCap: CircularStrokeCap.round,
                       center: Text(displaytext1,
                           style: TextStyle(
-                              fontSize: 25, fontStyle: FontStyle.italic)),
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Montserrat Medium')),
                     ),
                     SizedBox(height: 60),
                     CircularPercentIndicator(
@@ -121,13 +115,15 @@ class _MyMonitorState extends State<MyMonitor> {
                       animationDuration: 3000,
                       radius: 100,
                       lineWidth: 20,
-                      percent: 0.8,
+                      percent: 1.0,
                       progressColor: Colors.red.shade500,
                       backgroundColor: Colors.red.shade100,
                       circularStrokeCap: CircularStrokeCap.round,
                       center: Text('$displaytext2',
                           style: TextStyle(
-                              fontSize: 23, fontStyle: FontStyle.italic),
+                              fontSize: 23,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Montserrat Medium'),
                           textAlign: TextAlign.center),
                     ),
                   ],
@@ -169,26 +165,3 @@ class WaveClipper extends CustomClipper<Path> {
     return true;
   }
 }
-/*Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text ('Read ya habeby'),
-      ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.only(top: 15.0),
-          child: Column(
-            children: [
-              Text(displaytext, style: TextStyle(fontSize: 50)),
-              Text(displaytext1,style: TextStyle(fontSize: 45)),
-              Text(displaytext2,style: TextStyle(fontSize: 45)),
-            ],
-          ),
-        ),
-      )
-    );
-
-  }
-
-}
-*/

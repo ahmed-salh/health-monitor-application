@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class Directions{
+class Directions {
   final LatLngBounds bounds;
   final List<PointLatLng> polylinePoints;
   final String totalDistance;
@@ -16,8 +16,6 @@ class Directions{
   });
 
   factory Directions.fromMap(Map<String, dynamic> map) {
-   // if((map['routes'] as List).isEmpty) return null;
-
     final data = Map<String, dynamic>.from(map['routes'][0]);
 
     final northeast = data['bounds']['northeast'];
@@ -29,7 +27,7 @@ class Directions{
 
     String distance = '';
     String duration = ' ';
-    if((data['legs'] as List).isNotEmpty) {
+    if ((data['legs'] as List).isNotEmpty) {
       final leg = data['legs'][0];
       distance = leg['distance']['text'];
       duration = leg['duration']['text'];
@@ -37,7 +35,8 @@ class Directions{
 
     return Directions(
       bounds: bounds,
-      polylinePoints: PolylinePoints().decodePolyline(data['overview_polyline']['points']),
+      polylinePoints:
+          PolylinePoints().decodePolyline(data['overview_polyline']['points']),
       totalDistance: distance,
       totalDuration: duration,
     );

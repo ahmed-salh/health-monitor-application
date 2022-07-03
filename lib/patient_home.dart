@@ -6,29 +6,22 @@ import 'package:grad_app/users.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-//import 'package:google_sign_in/google_sign_in.dart';
 import 'google_login_controller.dart';
 import 'login_page.dart';
 
 import 'ambulance.dart';
 import 'livetrack.dart';
-//import 'loggedin.dart';
 import 'map_main.dart';
 import 'navigation_drawer.dart';
 import 'monitor.dart';
 
 class MyPatientPage extends StatefulWidget {
-  //MyHomePage({Key key, this.title}) : super(key: key);
-  //final String title;
-
   @override
   _MyPatientPageState createState() => _MyPatientPageState();
 }
 
 class _MyPatientPageState extends State<MyPatientPage> {
   final number = '123';
-
-  //GoogleSignIn _googleSignIn = GoogleSignIn();
 
   @override
   Widget build(BuildContext context) {
@@ -47,47 +40,21 @@ class _MyPatientPageState extends State<MyPatientPage> {
               style: TextStyle(fontFamily: 'BebasNeue', fontSize: 30)),
           elevation: 20,
         ),
-        body:
-            /*StreamBuilder<User>(
-            stream: FirebaseAuth.instance.authStateChanges(),
-            builder: (context, snapshot) {
-              if (snapshot.hasData) {}
-              if (snapshot.connectionState == ConnectionState.waiting) {
-                return CircularProgressIndicator();
-              }
-              //return SignUp();
-              return Container(
-                child: Center(
-                  child: GestureDetector (
-                    onTap: () async {
-                      final newUser = await _googleSignIn.signIn();
-                      final googleAuth = await newUser.authentication;
-                      final creds = GoogleAuthProvider.credential(
-                        accessToken: googleAuth.accessToken,
-                        idToken: googleAuth.idToken
-                      );
-                      await FirebaseAuth.instance.signInWithCredential(creds);
-                    },
-                    child: Container()
-                  )
-                ),
-              );
-            }),*/
-            Container(
-                child: Stack(
+        body: Container(
+            child: Stack(
           children: <Widget>[
             Opacity(
                 opacity: 0.5,
                 child: ClipPath(
                     clipper: WaveClipper(),
                     child: Container(
-                      color: Color(0xff006064),
+                      color: Colors.white,
                       height: 200,
                     ))),
             ClipPath(
                 clipper: WaveClipper(),
                 child: Container(
-                  color: Color(0xffe0f2f1),
+                  color: Color(0xff006064),
                   height: 180,
                 )),
             Container(
@@ -123,7 +90,7 @@ class _MyPatientPageState extends State<MyPatientPage> {
                                   style: TextStyle(
                                       fontFamily: 'PatuaOne',
                                       fontSize: 25,
-                                      color: Color(0xff006064)),
+                                      color: Colors.white),
                                 ),
                               ])
                         ],
@@ -168,13 +135,6 @@ class _MyPatientPageState extends State<MyPatientPage> {
                           margin: EdgeInsets.all(8.0),
                           child: InkWell(
                               onTap: () {
-                                /*Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => UserPage(
-                                    urlImage: urlImage,
-                                    name: name,
-                                  )));*/
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(

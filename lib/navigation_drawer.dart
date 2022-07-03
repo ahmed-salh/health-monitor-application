@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:grad_app/user_page.dart';
-import 'package:grad_app/users.dart';
 import 'package:provider/provider.dart';
 import 'google_login_controller.dart';
-import 'livetrack.dart';
 import 'login_page.dart';
 import 'map_main.dart';
 import 'monitor.dart';
@@ -28,11 +25,6 @@ class NavigationDrawerWidget extends StatelessWidget {
                 name: name,
                 email: email,
                 onClicked: () {},
-                /* onClicked: () => Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => UserPage(
-                            name: name,
-                            urlImage: urlImage,
-                          )))*/
               ),
               const SizedBox(height: 48),
               buildMenuItem(
@@ -73,22 +65,6 @@ class NavigationDrawerWidget extends StatelessWidget {
                 onClicked: () {},
               ),
               const SizedBox(height: 16),
-              /* ActionChip(
-                padding: EdgeInsets.all(10),
-                //backgroundColor: Color(0xFFFF9E80),
-                avatar: Icon(Icons.logout, color: Colors.white),
-                label: Text("Log Out"),
-                onPressed: () {
-                  Provider.of<GoogleSignInController>(context, listen: false)
-                      .logOut();
-                },
-              ),*/
-              /*_createFooterItem(
-                  icon: Icons.login_outlined,
-                  text: 'Logout',
-                  onTap: () => Provider.of<GoogleSignInController>(context,
-                          listen: false)
-                      .logOut())*/
             ])));
   }
 
@@ -114,18 +90,12 @@ class NavigationDrawerWidget extends StatelessWidget {
           builder: (context) => MyHomePage(),
         ));
         break;
-      /*case 1:
-        Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => UserPage(
-            urlImage: urlImage,
-            name: name,
-          ),
-        ));
-        break;*/
+
       case 1:
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => LoginPage()));
         break;
+
       case 2:
         Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => MapScreen(),
@@ -172,22 +142,4 @@ class NavigationDrawerWidget extends StatelessWidget {
                   ],
                 )
               ])));
-
-  Widget _createFooterItem(
-      {required IconData icon,
-      required String text,
-      required GestureTapCallback onTap}) {
-    return ListTile(
-      title: Row(
-        children: <Widget>[
-          Icon(icon),
-          Padding(
-            padding: EdgeInsets.only(left: 8.0),
-            child: Text(text),
-          )
-        ],
-      ),
-      onTap: onTap,
-    );
-  }
 }

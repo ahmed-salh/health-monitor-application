@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
-//import 'package:flutter_speed_dial/flutter_speed_dial.dart';
-//import 'package:url_launcher/url_launcher.dart';
 
 class CallAmbulance extends StatelessWidget {
   Widget ambulanceButton() {
@@ -25,6 +23,7 @@ class CallAmbulance extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Color(0xffeceff1),
         appBar: AppBar(
           title: Text('Speed Dial',
               style: TextStyle(fontFamily: 'BebasNeue', fontSize: 30)),
@@ -35,13 +34,13 @@ class CallAmbulance extends StatelessWidget {
               child: ClipPath(
                   clipper: WaveClipper(),
                   child: Container(
-                    color: Color(0xff006064),
+                    color: Colors.white,
                     height: 200,
                   ))),
           ClipPath(
               clipper: WaveClipper(),
               child: Container(
-                color: Color(0xffe0f2f1),
+                color: Color(0xff006064),
                 height: 180,
               )),
           Center(
