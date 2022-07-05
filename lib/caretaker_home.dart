@@ -142,7 +142,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => MapScreen()));
+                                        builder: (context) =>
+                                            MyLocationPage()));
                               },
                               splashColor: Colors.green,
                               child: Center(

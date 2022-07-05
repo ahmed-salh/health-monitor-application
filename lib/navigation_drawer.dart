@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'google_login_controller.dart';
+import 'livetrack.dart';
 import 'login_page.dart';
 import 'map_main.dart';
 import 'monitor.dart';
@@ -98,7 +99,7 @@ class NavigationDrawerWidget extends StatelessWidget {
 
       case 2:
         Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => MapScreen(),
+          builder: (context) => MyLocationPage(),
         ));
         break;
 

@@ -6,6 +6,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'caretaker_home.dart';
 import 'google_login_controller.dart';
+import 'localization/app_localiztion.dart';
+import 'localization/localization_widget.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -20,7 +22,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       backgroundColor: Color(0xFF006064),
       appBar: AppBar(
-        title: Text('Health Tracker',
+        title: Text("${AppLocalizations.of(context).translate('healthapp')}",
             style: TextStyle(fontFamily: 'BebasNeue', fontSize: 30)),
         backgroundColor: Color(0xFF006064),
         elevation: 20,
@@ -55,6 +57,7 @@ class _LoginPageState extends State<LoginPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Spacer(),
+            LocalizationWidget(),
             CircleAvatar(
               backgroundImage: AssetImage('images/iconapp.jpeg'),
               radius: 150,
@@ -63,7 +66,7 @@ class _LoginPageState extends State<LoginPage> {
             Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                'Hey there,\n Welcome Back!',
+                '${AppLocalizations.of(context).translate('welcomeBanner')}',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 28,
