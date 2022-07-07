@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'google_login_controller.dart';
 import 'livetrack.dart';
+import 'localization/app_localiztion.dart';
 import 'login_page.dart';
-import 'map_main.dart';
 import 'monitor.dart';
 import 'caretaker_home.dart';
 
@@ -12,7 +12,7 @@ class NavigationDrawerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final name = 'Yasmin';
+    final name = '${AppLocalizations.of(context)?.translate('name')}';
     final email = 'yasmeenabeel9@gmail.com';
     final urlImage =
         'https://lh3.googleusercontent.com/a-/AOh14Gh2IKK3ddU8x0huFJTu-m0y3zXTZ-Qo3Y6lhPMLw7E=s360-p-rw-no';
@@ -29,25 +29,27 @@ class NavigationDrawerWidget extends StatelessWidget {
               ),
               const SizedBox(height: 48),
               buildMenuItem(
-                text: 'Home',
+                text: '${AppLocalizations.of(context)?.translate('homeMenu')}',
                 icon: Icons.home,
                 onClicked: () => selectedItem(context, 0),
               ),
               const SizedBox(height: 16),
               buildMenuItem(
-                text: 'Users',
+                text: '${AppLocalizations.of(context)?.translate('usersMenu')}',
                 icon: Icons.people,
                 onClicked: () => selectedItem(context, 1),
               ),
               const SizedBox(height: 16),
               buildMenuItem(
-                text: 'Live Tracker',
+                text:
+                    '${AppLocalizations.of(context)?.translate('livetrackMenu')}',
                 icon: Icons.update,
                 onClicked: () => selectedItem(context, 2),
               ),
               const SizedBox(height: 16),
               buildMenuItem(
-                text: 'Monitor',
+                text:
+                    '${AppLocalizations.of(context)?.translate('monitorMenu')}',
                 icon: Icons.favorite_border,
                 onClicked: () => selectedItem(context, 3),
               ),
@@ -55,13 +57,13 @@ class NavigationDrawerWidget extends StatelessWidget {
               const Divider(color: Colors.white70),
               const SizedBox(height: 24),
               buildMenuItem(
-                text: 'Contact Us',
+                text: '${AppLocalizations.of(context)?.translate('contact')}',
                 icon: Icons.call,
                 onClicked: () {},
               ),
               const SizedBox(height: 16),
               buildMenuItem(
-                text: 'FAQ',
+                text: '${AppLocalizations.of(context)?.translate('FAQ')}',
                 icon: Icons.question_answer,
                 onClicked: () {},
               ),

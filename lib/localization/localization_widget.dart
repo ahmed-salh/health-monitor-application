@@ -14,17 +14,18 @@ class LocalizationWidget extends StatelessWidget {
         children: <Widget>[
           Expanded(
             child: IconButton(
+                alignment: Alignment.bottomCenter,
                 onPressed: () {
                   appLanguage.appLocal == Locale('ar')
                       ? appLanguage.changeLanguage(Locale("en"))
                       : appLanguage.changeLanguage(Locale("ar"));
                 },
                 icon: Icon(Icons.language),
-                color: Colors.black),
+                color: Colors.white),
           ),
           Text(
             appLanguage.appLocal == Locale('ar') ? 'ع' : 'en',
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(color: Colors.white),
           ),
         ],
       ),

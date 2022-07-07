@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
+import 'localization/app_localiztion.dart';
 import 'navigation_drawer.dart';
 import 'package:firebase_database/firebase_database.dart';
 
@@ -131,7 +132,8 @@ class MyLocationPageState extends State<MyLocationPage> {
       drawer: NavigationDrawerWidget(),
       appBar: AppBar(
         //title: Text('${widget.title}'),
-        title: Text('Live Tracker'),
+        title: Text(
+            '${AppLocalizations.of(context)?.translate('livetrackTitle')}'),
       ),
       body: GoogleMap(
         mapType: MapType.normal,

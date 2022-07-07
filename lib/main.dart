@@ -39,11 +39,11 @@ class MyApp extends StatelessWidget {
               ),
             ),
             supportedLocales: [
-              const Locale('ar', ''),
               const Locale('en', 'US'),
+              const Locale('ar', ''),
             ],
             debugShowCheckedModeBanner: false,
-            title: 'Health Tracker System',
+            title: '${AppLocalizations.of(context)?.translate('appTitle')}',
             locale: localeSnapshot.appLocal,
             // These delegates make sure that the localization data for the proper language is loaded
             localizationsDelegates: [

@@ -7,6 +7,7 @@ import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'google_login_controller.dart';
+import 'localization/app_localiztion.dart';
 import 'login_page.dart';
 
 import 'ambulance.dart';
@@ -36,7 +37,7 @@ class _MyPatientPageState extends State<MyPatientPage> {
         drawer: NavigationDrawerWidget(),
         appBar: AppBar(
           //title: Text('${widget.title}'),
-          title: Text('Health Tracker',
+          title: Text('${AppLocalizations.of(context)?.translate('appTitle')}',
               style: TextStyle(fontFamily: 'BebasNeue', fontSize: 30)),
           elevation: 20,
         ),
@@ -86,7 +87,7 @@ class _MyPatientPageState extends State<MyPatientPage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Text(
-                                  'Hello, Yasmin!',
+                                  '${AppLocalizations.of(context)?.translate('hellopatient')}',
                                   style: TextStyle(
                                       fontFamily: 'PatuaOne',
                                       fontSize: 25,
@@ -123,7 +124,7 @@ class _MyPatientPageState extends State<MyPatientPage> {
                                     Icon(Icons.favorite_sharp,
                                         size: 70.0, color: Colors.red),
                                     Text(
-                                      'Monitor',
+                                      '${AppLocalizations.of(context)?.translate('monitorCard')}',
                                       style: cardTextStyle,
                                     ),
                                   ]))),
@@ -148,7 +149,7 @@ class _MyPatientPageState extends State<MyPatientPage> {
                                     Icon(Icons.people_alt_outlined,
                                         size: 70.0, color: Colors.blueGrey),
                                     Text(
-                                      'Users',
+                                      '${AppLocalizations.of(context)?.translate('usersCard')}',
                                       style: cardTextStyle,
                                     ),
                                   ]))),
@@ -175,7 +176,7 @@ class _MyPatientPageState extends State<MyPatientPage> {
                                     Padding(
                                       padding: const EdgeInsets.all(15.0),
                                       child: Text(
-                                        'Call Ambulance',
+                                        '${AppLocalizations.of(context)?.translate('ambCard')}',
                                         style: cardTextStyle,
                                       ),
                                     ),
@@ -199,7 +200,8 @@ class _MyPatientPageState extends State<MyPatientPage> {
             children: [
               SpeedDialChild(
                   child: Icon(Icons.emergency_sharp),
-                  label: "Call Ambulance",
+                  label:
+                      "${AppLocalizations.of(context)?.translate('ambCard')}",
                   backgroundColor: Color(0xFFD50000),
                   onTap: () async {
                     await FlutterPhoneDirectCaller.callNumber(number);

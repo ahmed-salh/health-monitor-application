@@ -1,8 +1,33 @@
 {
   "appTitle": "Health Tracker",
-  "buttonTitle": "العربية",
-  "textArea": "This is just a test text",
-  "healthapp" : "Health monitor application"
-,
-  "welcomeBanner" : "Hey there,\\n Welcome Back!"
+
+  "welcomeBanner" : "Hey there,\n Welcome Back!",
+  "signInGoogle" : "Sign in with your Google account",
+  "signInButton" : "Sign in with Google",
+  "welcomeUser" : "Welcome ",
+  "checkStatus" : "To continue to the Home Page,\n please pick your status: \n",
+  "caretakerButton" : "Caretaker",
+  "patientButton" : "Patient",
+  "logout" : "LOG OUT",
+  "hellocaretaker" : "Hello, Yasmin's Family!",
+  "hellopatient" : "Hello, Yasmin!",
+  "monitorCard" : "Monitor",
+  "livetrackCard" : "Live Tracker",
+  "usersCard" : "Users",
+  "ambCard" : "Call Ambulance",
+  "homeMenu" : "Home",
+  "usersMenu" : "Users",
+  "livetrackMenu" : "Live Tracker",
+  "monitorMenu" : "Monitor",
+  "contact" : "Contact Us",
+  "FAQ" : "FAQ",
+  "SPO2" : "SPO2",
+  "Heart" : "HeartRate",
+  "vitals" : "Yasmin's current vitals",
+  "livetrackTitle" : "Live Tracker",
+  "speedDialTitle" : "Speed Dial",
+  "ambulance" : "Call Ambulance",
+  "name" : "Yasmin Nabil"
+
+
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 
+import 'localization/app_localiztion.dart';
+
 class CallAmbulance extends StatelessWidget {
   Widget ambulanceButton() {
     final number1 = '123';
@@ -25,7 +27,8 @@ class CallAmbulance extends StatelessWidget {
     return Scaffold(
         backgroundColor: Color(0xffeceff1),
         appBar: AppBar(
-          title: Text('Speed Dial',
+          title: Text(
+              '${AppLocalizations.of(context)?.translate('speedDialTitle')}',
               style: TextStyle(fontFamily: 'BebasNeue', fontSize: 30)),
         ),
         body: Stack(children: <Widget>[

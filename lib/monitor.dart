@@ -5,6 +5,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
+import 'localization/app_localiztion.dart';
 import 'navigation_drawer.dart';
 
 class MyMonitor extends StatefulWidget {
@@ -31,13 +32,15 @@ class _MyMonitorState extends State<MyMonitor> {
     database.child('SPO2').onValue.listen((event) {
       final Object? oxygen = event.snapshot.value;
       setState(() {
-        displaytext1 = 'SpO2\n $oxygen % ';
+        displaytext1 =
+            '${AppLocalizations.of(context)?.translate('SPO2')}\n $oxygen % ';
       });
     });
     database.child('HEARTRATE').onValue.listen((event) {
       final Object? heart = event.snapshot.value;
       setState(() {
-        displaytext2 = ' HeartRate\n $heart bpm ';
+        displaytext2 =
+            ' ${AppLocalizations.of(context)?.translate('Heart')}\n $heart bpm ';
       });
     });
   }
@@ -49,7 +52,7 @@ class _MyMonitorState extends State<MyMonitor> {
       drawer: NavigationDrawerWidget(),
       appBar: AppBar(
         title: Text(
-          'Health Tracker',
+          '${AppLocalizations.of(context)?.translate('appTitle')}',
           style: TextStyle(fontFamily: 'BebasNeue', fontSize: 30),
         ),
       ),
@@ -79,7 +82,7 @@ class _MyMonitorState extends State<MyMonitor> {
                   height: 110,
                 ),
                 Text(
-                  "Yasmin's current vitals..",
+                  '${AppLocalizations.of(context)?.translate('vitals')}',
                   style: TextStyle(
                       fontFamily: 'Montserrat Medium',
                       fontSize: 25,

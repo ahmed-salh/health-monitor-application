@@ -22,14 +22,14 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       backgroundColor: Color(0xFF006064),
       appBar: AppBar(
-        title: Text("${AppLocalizations.of(context).translate('healthapp')}",
+        title: Text("${AppLocalizations.of(context)?.translate('appTitle')}",
             style: TextStyle(fontFamily: 'BebasNeue', fontSize: 30)),
         backgroundColor: Color(0xFF006064),
         elevation: 20,
         leading: Container(
           padding: EdgeInsets.all(5),
           child: CircleAvatar(
-            backgroundImage: AssetImage('images/iconapp.jpeg'),
+            backgroundImage: AssetImage('images/logogreen.jpg'),
             radius: 150,
           ),
         ),
@@ -57,16 +57,15 @@ class _LoginPageState extends State<LoginPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Spacer(),
-            LocalizationWidget(),
             CircleAvatar(
-              backgroundImage: AssetImage('images/iconapp.jpeg'),
+              backgroundImage: AssetImage('images/logogreen.jpg'),
               radius: 150,
             ),
             Spacer(),
             Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                '${AppLocalizations.of(context).translate('welcomeBanner')}',
+                '${AppLocalizations.of(context)?.translate('welcomeBanner')}',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 28,
@@ -79,7 +78,7 @@ class _LoginPageState extends State<LoginPage> {
             Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                'Sign in with your Google account',
+                '${AppLocalizations.of(context)?.translate('signInGoogle')}',
                 style: TextStyle(
                   fontSize: 19,
                   fontFamily: "Montserrat Regular",
@@ -96,7 +95,8 @@ class _LoginPageState extends State<LoginPage> {
                 minimumSize: Size(double.infinity, 50),
               ),
               icon: FaIcon(FontAwesomeIcons.google),
-              label: Text('Sign in with Google',
+              label: Text(
+                  '${AppLocalizations.of(context)?.translate('signInButton')}',
                   style: TextStyle(
                       fontFamily: 'Montserrat Medium',
                       fontWeight: FontWeight.bold)),
@@ -105,6 +105,8 @@ class _LoginPageState extends State<LoginPage> {
                     .login();
               },
             ),
+            SizedBox(height: 30),
+            LocalizationWidget(),
           ],
         ));
   }
@@ -120,7 +122,8 @@ class _LoginPageState extends State<LoginPage> {
             radius: 70,
           ),
           SizedBox(height: 8),
-          Text('Welcome ${model.googleAccount!.displayName ?? ''}',
+          Text(
+              '${AppLocalizations.of(context)?.translate('welcomeUser')} ${model.googleAccount!.displayName ?? ''}',
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 30,
@@ -135,7 +138,7 @@ class _LoginPageState extends State<LoginPage> {
                   fontWeight: FontWeight.bold)),
           SizedBox(height: 40),
           Text(
-            'To continue to the Home Page, \n please pick your status: \n',
+            '${AppLocalizations.of(context)?.translate('checkStatus')}',
             style: TextStyle(
               fontFamily: "PatuaOne",
               color: Colors.white,
@@ -143,7 +146,8 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
           ElevatedButton.icon(
-            icon: Text('Caretaker',
+            icon: Text(
+                '${AppLocalizations.of(context)?.translate('caretakerButton')}',
                 style: TextStyle(
                     fontFamily: "PatuaOne",
                     color: Color(0xFF006064),
@@ -166,7 +170,8 @@ class _LoginPageState extends State<LoginPage> {
           ),
           SizedBox(height: 10),
           ElevatedButton.icon(
-            icon: Text('Patient',
+            icon: Text(
+                '${AppLocalizations.of(context)?.translate('patientButton')}',
                 style: TextStyle(
                     fontFamily: "PatuaOne",
                     color: Color(0xFF006064),
@@ -191,7 +196,7 @@ class _LoginPageState extends State<LoginPage> {
             padding: EdgeInsets.all(10),
             backgroundColor: Colors.white,
             avatar: Icon(Icons.logout, color: Color(0xFF006064)),
-            label: Text("Log Out",
+            label: Text("${AppLocalizations.of(context)?.translate('logout')}",
                 style: TextStyle(
                     color: Color(0xFF006064),
                     fontSize: 20,

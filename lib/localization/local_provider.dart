@@ -11,7 +11,7 @@ class LocalProvider with ChangeNotifier {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     _appLocale = preferences.getString('language_code') != null
         ? Locale(preferences.getString('language_code')!)
-        : Locale('ar');
+        : Locale('en');
     notifyListeners();
   }
 

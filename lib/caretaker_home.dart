@@ -7,6 +7,7 @@ import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'google_login_controller.dart';
+import 'localization/app_localiztion.dart';
 import 'login_page.dart';
 
 import 'ambulance.dart';
@@ -42,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
         drawer: NavigationDrawerWidget(),
         appBar: AppBar(
           //title: Text('${widget.title}'),
-          title: Text('Health Tracker',
+          title: Text('${AppLocalizations.of(context)?.translate('appTitle')}',
               style: TextStyle(fontFamily: 'BebasNeue', fontSize: 30)),
           elevation: 20,
         ),
@@ -92,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Text(
-                                  "Hello, Yasmin's Family!",
+                                  "${AppLocalizations.of(context)?.translate('hellocaretaker')}",
                                   style: TextStyle(
                                       fontFamily: 'PatuaOne',
                                       fontSize: 25,
@@ -129,7 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     Icon(Icons.favorite_sharp,
                                         size: 70.0, color: Colors.red),
                                     Text(
-                                      'Monitor',
+                                      '${AppLocalizations.of(context)?.translate('monitorCard')}',
                                       style: cardTextStyle,
                                     ),
                                   ]))),
@@ -153,7 +154,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     Icon(Icons.update,
                                         size: 70.0, color: Colors.green),
                                     Text(
-                                      'Live Tracker',
+                                      '${AppLocalizations.of(context)?.translate('livetrackCard')}',
                                       style: cardTextStyle,
                                     ),
                                   ]))),
@@ -178,7 +179,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     Icon(Icons.people_alt_outlined,
                                         size: 70.0, color: Colors.blueGrey),
                                     Text(
-                                      'Users',
+                                      '${AppLocalizations.of(context)?.translate('usersCard')}',
                                       style: cardTextStyle,
                                     ),
                                   ]))),
@@ -205,7 +206,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     Padding(
                                       padding: const EdgeInsets.all(15.0),
                                       child: Text(
-                                        'Call Ambulance',
+                                        '${AppLocalizations.of(context)?.translate('ambCard')}',
                                         style: cardTextStyle,
                                       ),
                                     ),
@@ -229,7 +230,8 @@ class _MyHomePageState extends State<MyHomePage> {
             children: [
               SpeedDialChild(
                   child: Icon(Icons.emergency_sharp),
-                  label: "Call Ambulance",
+                  label:
+                      "${AppLocalizations.of(context)?.translate('ambCard')}",
                   backgroundColor: Color(0xFFD50000),
                   onTap: () async {
                     await FlutterPhoneDirectCaller.callNumber(number);
